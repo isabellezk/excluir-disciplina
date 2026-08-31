@@ -3,8 +3,8 @@
     $msg = "";
     $novoArquivo = "";
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["sigla"])) {
-        $sigla = $_GET["sigla"];
+    if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_POST["sigla"])) {
+        $sigla = $_POST["sigla"];
 
         $arqDisc = fopen("disciplinas.txt", "r") or die("erro ao abrir o arquivo");
 
@@ -40,7 +40,7 @@
 <body>
     <h1>Excluir disciplina</h1>
 
-    <form action="ex06_excluirDisciplina.php" method="GET">
+    <form action="ex06_excluirDisciplina.php" method="POST">
         Digite a sigla da disciplina que voce quer excluir: <input type="text" name="sigla"><br><br>
         <input type="submit" value="Excluir Disciplina">
     </form>
